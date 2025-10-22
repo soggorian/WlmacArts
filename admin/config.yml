@@ -1,0 +1,188 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: '/assets/img'
+site_url: 'https://wlmacarts.netlify.app'
+logo_url: 'https://wlmacarts.netlify.app/assets/img/logo.svg'
+collections:
+  - name: 'announcements'
+    label: 'Announcements'
+    label_singular: 'Post'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'config',
+          file: 'members',
+          search_fields: ['members.*.name'],
+          value_field: 'members.*.name',
+          min: 1
+        }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'select',
+          multiple: true,
+          required: false,
+          options: [
+            { label: 'Dance', value: 'dance' },
+            { label: 'Music', value: 'music' },
+            { label: 'Visual Arts', value: 'visual-arts' },
+            { label: 'Drama', value: 'drama' },
+          ]
+        }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'config'
+    label: 'Config'
+    editor:
+      preview: false
+    files:
+      - label: 'Members'
+        name: 'members'
+        file: '_data/members.yml'
+        fields:
+          - label: 'Members'
+            label_singular: 'Member'
+            name: 'members'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Image', name: 'headshot', widget: 'image', allow_multiple: false, required: false, media_folder: '{{media_folder}}/members' }
+              - { label: 'Council', name: 'council', widget: 'string' }
+              - { label: 'Position', name: 'position', widget: 'string' }
+              - { label: 'Bio', name: 'bio', widget: 'text' }
+  - name: 'events'
+    label: 'Events'
+    label_singular: 'Event'
+    folder: '_events/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'select',
+          multiple: true,
+          required: false,
+          options: [
+            { label: 'Dance', value: 'dance' },
+            { label: 'Music', value: 'music' },
+            { label: 'Visual Arts', value: 'visual-arts' },
+            { label: 'Drama', value: 'drama' },
+            { label: 'Central Arts', value: 'central-arts' },
+          ]
+        }
+      - { 
+          label: 'Thumbnail / Cover Image',
+          name: 'image',
+          widget: 'image', 
+          allow_multiple: false,
+          required: false,
+          media_folder: '{{media_folder}}/events/_thumbnails',
+          default: '/assets/img/logo.svg'
+        }
+      - { label: 'Recording / YouTube Video Link', name: 'video', widget: 'string', required: false, hint: 'e.g. https://www.youtube.com/watch?v=1FZSQZZm73U' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'Gallery',
+          name: 'media',
+          widget: 'image', 
+          required: false,
+          allow_multiple: true,
+          media_folder: '{{media_folder}}/events/{{filename}}'
+        }
+  - name: 'departments'
+    label: 'Departments'
+    editor:
+      preview: false
+    files:
+      - label: 'Music'
+        name: 'music'
+        file: '_data/departments/music.yml'
+        fields:
+          - { label: 'Heading', name: 'heading', widget: 'hidden', default: 'Music' }
+          - { label: 'Name', name: 'name', widget: 'hidden', default: 'Music' }
+          - label: 'Gallery'
+            name: 'gallery'
+            widget: 'object'
+            fields:
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'Image', name: 'image', widget: 'image', media_folder: '{{media_folder}}/music' }
+              - { label: 'Alt Text', name: 'alt-text', widget: 'string' }
+          - label: 'Contact'
+            name: 'contact'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Email', name: 'email', widget: 'string' }
+              - { label: 'Room', name: 'room', widget: 'string' }
+      - label: 'Drama'
+        name: 'drama'
+        file: '_data/departments/drama.yml'
+        fields:
+          - { label: 'Heading', name: 'heading', widget: 'hidden', default: 'Drama' }
+          - { label: 'Name', name: 'name', widget: 'hidden', default: 'Drama' }
+          - label: 'Gallery'
+            name: 'gallery'
+            widget: 'object'
+            fields:
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'Image', name: 'image', widget: 'image', media_folder: '{{media_folder}}/visual-arts' }
+              - { label: 'Alt Text', name: 'alt-text', widget: 'string' }
+          - label: 'Contact'
+            name: 'contact'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Email', name: 'email', widget: 'string' }
+              - { label: 'Room', name: 'room', widget: 'string' }
+      - label: 'Dance'
+        name: 'dance'
+        file: '_data/departments/dance.yml'
+        fields:
+          - { label: 'Heading', name: 'heading', widget: 'hidden', default: 'Dance' }
+          - { label: 'Name', name: 'name', widget: 'hidden', default: 'Dance' }
+          - label: 'Gallery'
+            name: 'gallery'
+            widget: 'object'
+            fields:
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'Image', name: 'image', widget: 'image', media_folder: '{{media_folder}}/dance' }
+              - { label: 'Alt Text', name: 'alt-text', widget: 'string' }
+          - label: 'Contact'
+            name: 'contact'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Email', name: 'email', widget: 'string' }
+              - { label: 'Room', name: 'room', widget: 'string' }
+      - label: 'Visual & Digital Arts'
+        name: 'visual-arts'
+        file: '_data/departments/visual-arts.yml'
+        fields:
+          - { label: 'Heading', name: 'heading', widget: 'hidden', default: 'Visual & Digital Arts' }
+          - { label: 'Name', name: 'name', widget: 'hidden', default: 'Visual Arts' }
+          - label: 'Gallery'
+            name: 'gallery'
+            widget: 'object'
+            fields:
+              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'Image', name: 'image', widget: 'image', media_folder: '{{media_folder}}/drama' }
+              - { label: 'Alt Text', name: 'alt-text', widget: 'string' }
+          - label: 'Contact'
+            name: 'contact'
+            widget: 'list'
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Email', name: 'email', widget: 'string' }
+              - { label: 'Room', name: 'room', widget: 'string' }
