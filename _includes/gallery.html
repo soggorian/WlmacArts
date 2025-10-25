@@ -1,0 +1,40 @@
+<div class="grid" id="gallery">
+  {% comment %}
+  {%- if page.url contains 'classwork' -%}
+    {%- assign prop = 'classwork-videos' -%}
+    {%- assign tag = page.tag | split: '-' | first -%}
+  {% else %}
+    {%- assign prop = 'gallery-videos' -%}
+    {%- assign tag = page.tag -%}
+  {%- endif -%}
+  {%- for vid in site.data.galleries[tag][prop] -%}
+    {%- assign id = vid | split: "v=" | last | split: "&" | first -%}
+    <iframe class="framed" width="560" height="315" src="https://www.youtube.com/embed/{{- id -}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  {%- endfor -%}
+  {% endcomment %}
+  {%- for img in gallery_media -%}
+    <img loading="lazy" src="{{ img.path | relative_url }}" alt="" class="framed">
+  {%- endfor -%}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+<script>
+  const gallery = Macy({
+    container: '#gallery',
+    margin: 24,
+    columns: 4,
+    breakAt: {
+      1000: 3,
+      800: 2,
+      500: 1
+    }
+  });
+
+  window.onresize = () => {
+    gallery.reInit();
+  }
+
+  gallery.on(gallery.constants.EVENT_IMAGE_LOAD, () => {
+    gallery.reInit();
+  });
+</script>
