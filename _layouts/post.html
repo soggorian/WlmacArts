@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="content">
+  <div class="title">
+    <h1>Announcements</h1>
+    <h2>The Latest News From MAC Arts</h2>
+  </div>
+
+  <div class="post">
+    <div class="post-author">
+      <span class="author__image">
+        {%- assign author = site.data.members.members | where:"name",page.author | first -%}
+        <img src="{{ "/assets/img" | append: author.headshot | relative_url }}" alt="{{ page.author }}">
+      </span>
+      <div class="author__text">
+        <span class="author__name">{{ page.author }}</span>
+        <span class="post__date">{{ page.date | date: "%b %-d, %Y" }}</span>
+      </div>
+    </div>
+
+    <h3 class="post-title">{{ page.title }}</h3>
+
+    {{ content }}
+  </div>
+</div>
