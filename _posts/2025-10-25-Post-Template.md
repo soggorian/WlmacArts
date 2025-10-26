@@ -4,14 +4,7 @@ author: Post Author
 tags: [dance, music]
 ---
 
-# Heading 1
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et urna tellus. Morbi aliquam non nisl sit amet eleifend. Sed in ex in sapien consectetur egestas ac sit amet lacus. Maecenas porta mollis nunc non faucibus. In hac habitasse platea dictumst. In in blandit orci. Praesent elementum sapien eget dolor pretium eleifend. Nulla vel mollis libero. Morbi at dapibus sapien. Quisque dui ipsum, euismod vel dolor vitae, vulputate gravida magna.
 
-## Heading 2 
-List Format:
-* One
-* Two
-* Three
 
-## Photos
-https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp
+![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg)
