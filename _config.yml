@@ -14,9 +14,9 @@ plugins:
 future: true
 
 nav_links:
-  Events: /events/
+  Coming Up: /announcements/
   Calendar: /calendar/
-  Announcements: /announcements/
+  Past Events: /events/
   Councils: /about/
   Departments:
     Music: /departments/music/
