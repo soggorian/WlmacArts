@@ -1,0 +1,39 @@
+<header class="site-header">
+  <a href="{{ "/" | relative_url }}" class="site-logo">
+    <img src="{{ "/assets/img/logo-white.svg" | relative_url }}" alt="MacArts">
+  </a>
+
+  <input class="nav-trigger" id="nav-trigger" type="checkbox"/>
+  <label for="nav-trigger">
+    <span class="menu-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </span>
+  </label>
+
+  <nav class="site-nav">
+    <ul class="nav-list">
+      {%- for nav_link in site.nav_links -%}
+        {%- if nav_link.last.first -%}
+          <li class="nav-item">
+            <a class="nav-link">{{ nav_link | first }}</a>
+            <ul class="nav-list">
+              {%- for item in nav_link.last -%}
+                <li class="nav-item">
+                  <a href="{{ item | last | relative_url }}" class="nav-link">{{ item | first }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </li>
+        {%- else -%}
+          <li class="nav-item">
+            <a href="{{ nav_link | last | relative_url }}" class="nav-link">{{ nav_link | first }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>
