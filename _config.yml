@@ -1,8 +1,8 @@
 title: Mackenzie Arts
 description: >-
   WLMAC Arts Council events and information.
-baseurl: "" # TODO: Remove when migrating to domain
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "https://macarts.netlify.app" # TODO: Remove when migrating to domain
+url: "https://macarts.netlify.app"# the base hostname & protocol for your site, e.g. http://example.com
 # copyright: "&copy; 2020 Mackenzie Arts Council."
 
 # Build settings
