@@ -1,0 +1,34 @@
+---
+layout: info
+permalink: /staff/
+title: The Staff
+subheading: 2021-22
+default_avatar: "/members/default.png"
+---
+
+<div class="listing">
+  {%- for member in site.data.members.staff -%}
+    <div>
+      <div class="img-wrapper small">
+          {%- capture headshot -%}
+            {{ member.headshot | default: page.default_avatar }}
+          {%- endcapture -%}
+
+        <img src="{{ "/assets/img" | append: headshot | relative_url }}" alt="{{ member.name }}" class="framed">
+      </div>
+      <div class="info">
+        <h2>{{ member.name }}</h2>
+        <h3>{{ member.position }}</h3>
+        <h4><i data-feather="map-pin"></i>{{ member.location }}</h4>
+        <h4><a href="mailto:{{ member.contact }}"><i data-feather="mail"></i>{{ member.contact }}</a></h4>
+        <p>{{ member.bio }}</p>
+      </div>
+    </div>
+  {%- endfor -%}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  window.onload = () => {
+    feather.replace();
+  };
+</script>
