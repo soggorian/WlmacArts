@@ -1,0 +1,129 @@
+@mixin columnize-list {
+  > div {
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+
+    .info {
+      text-align: center;
+      margin-top: 1rem;
+      margin-left: 0;
+
+      > * {
+        width: 100%;
+      }
+    }
+
+    .img-wrapper {
+      width: 80%;
+      max-width: unset;
+    }
+  }
+
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.listing {
+  display: flex;
+  flex-flow: column nowrap;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $charcoal;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: $charcoal;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  > div {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 100%;
+    margin: 1.25rem;
+
+    .info {
+      margin-top: max(0, $border-size - 0.6rem);
+      margin-left: 1.5rem;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-basis: 100%;
+
+      p {
+        font-size: 1.25rem;
+        margin: 0.75rem 0;
+        letter-spacing: 0.5px;
+      }
+
+      img,
+      iframe {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .img-wrapper {
+      display: flex;
+      min-width: 450px;
+      max-height: 500px;
+      height: auto;
+      flex-shrink: 2;
+
+      &.small {
+        min-width: unset;
+        max-width: 225px;
+        max-height: 300px;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 350px;
+      }
+
+      @include mq($on-laptop) {
+        min-width: 300px;
+      }
+    }
+  }
+
+  @include mq($on-tablet) {
+    @include columnize-list;
+  }
+
+  &.two {
+    flex-flow: row wrap;
+
+    > div {
+      width: calc(50% - 2.5rem);
+
+      .img-wrapper {
+        min-width: 220px;
+        max-height: 300px;
+      }
+    }
+
+    @include mq(1250px) {
+      flex-flow: column nowrap;
+
+      > div {
+        width: auto;
+  
+        .img-wrapper {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+}

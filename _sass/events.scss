@@ -1,0 +1,165 @@
+$underline-colour: rgba(lighten($charcoal, 62%), 0.7);
+%underline {
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid $underline-colour;
+  padding-bottom: 0.5rem;
+}
+
+.dropdown--blue {
+  padding: 7px;
+  background-color: #7fb2df;
+  color: white;
+  font-family: "Lemon Milk", sans-serif;
+  font-weight: 300;
+  border: none;
+  border-radius: 3px;
+  float: right;
+
+  option {
+    font-family: "Lemon Milk", sans-serif;
+    background-color: white;
+    color: black;
+  }
+}
+
+.event {
+  &__title {
+    font-size: 2.5rem;
+    color: $charcoal;
+    font-weight: 400;
+    font-family: "Lemon Milk", sans-serif;
+
+    @include mq($on-laptop) {
+      font-size: 2rem;
+    }
+    @include mq($on-tablet) {
+      font-size: 1.7rem;
+    }
+
+    & + hr {
+      border: 1px solid $underline-colour;
+      margin: 0.5rem 0 0.7rem;
+    }
+  }
+  &__info {
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    @include mq($on-tablet) {
+      margin-left: 0;
+    }
+  }
+  &__description {
+    margin-top: 1rem;
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  &__date {
+    color: #bbb;
+    font-family: "Champagne & Limousines", sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  &__img {
+    position: relative;
+    margin-left: 1rem;
+  }
+  &__tag {
+    color: $charcoal;
+    font-family: "Lemon Milk", sans-serif;
+    font-size: 1.6rem;
+
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    bottom: 1.7rem;
+    left: 0.8rem;
+  }
+}
+
+@mixin columnize-list {
+  > div {
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+
+    .info {
+      text-align: center;
+      margin-top: 1rem;
+      margin-left: 0;
+
+      > * {
+        width: 100%;
+      }
+    }
+
+    .img-wrapper {
+      width: 80%;
+      max-width: unset;
+    }
+  }
+}
+
+.list-group {
+  margin: 1.5rem 0 1rem;
+
+  &__heading {
+    font-size: 1.7rem;
+    color: $mid-blue;
+    font-weight: 400;
+    font-family: "Lemon Milk", sans-serif;
+    @extend %underline;
+
+    @include mq($on-laptop) {
+      font-size: 1.4rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-flow: column nowrap;
+
+    > div {
+      max-width: 100%;
+      margin: 1.25rem;
+    }
+
+    @include mq($on-tablet) {
+      @include columnize-list;
+    }
+  }
+}
+
+.list-group__list ~ h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Champagne & Limousines", sans-serif;
+  letter-spacing: 0.3px;
+  margin: 2rem 0 1.2rem;
+  @extend %underline;
+}
+
+.content > .list-group__list:first-child {
+  margin-top: 3rem;
+  .event {
+    margin: 0;
+  }
+}
+.grid-group__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem 2.5rem;
+  margin: 2rem 0;
+
+  @include mq($on-tablet) {
+    grid-template-columns: 1fr;
+  }
+
+  > * {
+    max-width: #{"min(500px, 100%)"};
+    max-height: 350px;
+    place-self: center;
+  }
+}

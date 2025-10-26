@@ -1,0 +1,43 @@
+%btn-transition {
+  transition: all 0.1s;
+}
+
+a.button-large {
+  display: inline-block;
+  background-color: $charcoal;
+  border-radius: 100px;
+  padding: 1rem 2rem;
+
+  color: white;
+  font: {
+    size: 1.25rem;
+    family: $title-font;
+    weight: 400;
+  };
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  };
+
+  $diff: 3px;
+  $shadow-x: -7px;
+  $shadow-y: 10px;
+
+  box-shadow: $shadow-x $shadow-y $blue;
+  margin-left: abs($shadow-x);
+  margin-bottom: abs($shadow-y);
+  @extend %btn-transition;
+
+  &:hover {
+    box-shadow: ($shadow-x + $diff) ($shadow-y - $diff) $blue;
+    transform: translate(-$diff, $diff);
+    @extend %btn-transition;
+  }
+
+  @include mq($on-laptop) {
+    font-size: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}

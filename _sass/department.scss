@@ -1,0 +1,107 @@
+.department {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  .content {
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2.5rem;
+  }
+
+  :not(.at-a-glance) .title {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .at-a-glance {
+    background-color: lighten($blue, 12%);
+    padding: 1rem;
+    margin-right: 1rem;
+
+    .title {
+      h1 {
+        font-size: 3rem;
+        font-weight: initial;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @include mq(1200px) {
+    .listing {
+      @include columnize-list;
+    }
+    .title h1 {
+      padding: 0;
+    }
+  }
+
+  @include mq($on-laptop) {
+    flex-direction: column;
+    justify-content: revert;
+    align-items: center;
+
+    .content {
+      margin-bottom: 1rem;
+    }
+    .at-a-glance {
+      order: 2;
+      margin: 1rem 0;
+      @include content-width;
+    }
+  }
+}
+
+#contact {
+  margin: 1rem 1.25rem;
+
+  .h1 {
+    font-size: 2.5rem;
+  }
+  .h2 {
+    font-size: 1.5rem;
+  }
+
+  @include mq($home-breakpoint) {
+    margin: 1rem 0;
+
+    .h1 {
+      font-size: 2rem;
+      margin-bottom: 0;
+
+    }
+    .h2 {
+      font-size: 1.25rem;
+    }
+  }
+
+  .contact__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      width: 50%;
+      display: block;
+      margin: 0.5rem 0;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-top: 0.25rem; 
+    }
+    svg {
+      margin-right: 1rem;
+      height: 1.1rem;
+      vertical-align: text-top;
+    }
+
+    @include mq($on-laptop) {
+      flex-flow: column nowrap;
+
+      > div {
+        width: 100%;
+      }
+    }
+  }
+}
