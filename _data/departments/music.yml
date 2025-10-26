@@ -1,0 +1,48 @@
+heading: Music
+name: Music
+gallery:
+  description: >-
+    Music Council is a group of students that represent the music department of
+    Mackenzie. We help organize shows and help coordinate our ensembles and
+    other initiatives. This year we ran virtual performances and rehearsals as
+    well as mentorship programs for our junior students. We have many ensembles
+    you can join. For beginner students we welcome you to the Junior Band and
+    Choir and for our more experienced players you are welcome to the Wind
+    Ensemble, Jazz Band, Choir and to our Klezmer Band by invitation. Let’s make
+    music and come together.
+
+
+    Instagram: wlmac_music
+  image: /assets/img/music/Copy of IMG_8918.JPG
+  alt-text: Music Council
+classwork:
+  show: false
+  description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  image: /assets/img/music/m2.png
+  alt-text: some alt text for the image
+socials:
+  - at: "@wlmac_music"
+    icon: instagram
+    hyperlink: https://www.instagram.com/wlmac_music/
+  - at: "MacArts"
+    icon: youtube
+    hyperlink: https://www.instagram.com/wlmac_music/
+  - at: "MacArts"
+    icon: youtube
+    hyperlink: https://www.instagram.com/wlmac_music/
+  - at: "@wlmac_music"
+    icon: instagram
+    hyperlink: https://www.instagram.com/wlmac_music/
+  - at: "@wlmac_music"
+    icon: instagram
+    hyperlink: https://www.instagram.com/wlmac_music/
+  - at: "@wlmac_music"
+    icon: instagram
+    hyperlink: https://www.instagram.com/wlmac_music/
+contact:
+  - name: Lisa Cohen
+    email: lisa.abrams@tdsb.on.ca
+    room: 114 or 217
+  - name: Jennifer Scott-Barnier
+    email: jennifer.scottbarnier@tdsb.on.ca
+    room: 114

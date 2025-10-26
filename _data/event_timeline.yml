@@ -1,0 +1,12 @@
+- name: This Week
+  expr: "evt.date >= today and evt.date < one_week and evt.current != nil"
+- name: Next Week
+  expr: "evt.date >= one_week and evt.date < two_weeks and evt.current != nil"
+- name: This Month
+  expr: "evt.date >= two_weeks and evt.date < one_month and evt.current != nil"
+- name: Upcoming Events
+  expr: "evt.date >= one_month and evt.current != nil"
+- name: Past Events
+  expr: "evt.date < today and evt.current != nil"
+- name: Archive
+  expr: "evt.current == nil"

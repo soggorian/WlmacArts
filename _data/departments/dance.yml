@@ -1,0 +1,32 @@
+heading: Dance
+name: Dance
+gallery:
+  description: >-
+    Dance council is a group of motivated students with a passion for dance!  We
+    strive to bring a stronger dance presence in the Mackenzie community.
+    Organising events that help engage students to show off their dance skills
+    such as our holiday TikTok dance event has been a highlight! Dance Council
+    is a place where all students can come together and express their shared
+    love for the art and we welcome any and all students! Dance is a way for
+    students to express themselves in ways that words cannot and we are always
+    working on new exciting initiatives such as dance workshops and fun events.
+    Through the strong efforts of our entire council, we are constantly working
+    on finding new and creative ways and events to help foster the dance spirit
+    at Mackenzie!
+
+
+    Instagram: wlmac.dancecouncil
+  image: /assets/img/dance/IMG_10390.JPG
+  alt-text: Dance Council
+classwork:
+  show: false
+  description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+  image: /music/m4.png
+  alt-text: dance
+contact:
+  - name: Alexandra Peters
+    email: alexandra.peters@tdsb.on.ca
+    room: "216"
+  - name: Colin Fallowfield
+    email: colin.fallowfield@tdsb.on.ca
+    room: "144"

@@ -1,0 +1,109 @@
+---
+layout: info
+permalink: /calendar/
+title: Calendar
+subheading: 2020 - 2021
+---
+
+<div class="calendar-wrapper">
+  <section class="filter">
+    <h2>Filter</h2>
+    <div class="filter-toggles">
+      <a id="all" class="filter-toggle">All</a>
+      <a id="none" class="filter-toggle">None</a>
+    </div>
+
+    <form id="filter-form">
+      <ul class="filter-list">
+        <li class="filter-item">
+          <input id="dance-filter" type="checkbox" checked />
+          <label for="dance-filter">Dance</label>
+        </li>
+        <li class="filter-item">
+          <input id="drama-filter" type="checkbox" checked />
+          <label for="drama-filter">Drama</label>
+        </li>
+        <li class="filter-item">
+          <input id="music-filter" type="checkbox" checked />
+          <label for="music-filter">Music</label>
+        </li>
+        <li class="filter-item">
+          <input id="visual-arts-filter" type="checkbox" checked />
+          <label for="visual-arts-filter">Visual Arts</label>
+        </li>
+        <li class="filter-item">
+          <input id="course-work-filter" type="checkbox" checked />
+          <label for="course-work-filter">Course Work</label>
+        </li>
+        <li class="filter-item">
+          <input id="ensembles-filter" type="checkbox" checked />
+          <label for="ensembles-filter">Ensembles</label>
+        </li>
+      </ul>
+    </form>
+  </section>
+  <div id="calendar"></div>
+</div>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js"></script>
+<script>
+  new FullCalendar.Calendar(document.getElementById("calendar"), {
+    initialView: "dayGridMonth",
+    fixedWeekCount: false,
+    headerToolbar: {
+      start: "title",
+      center: "",
+      end: "today dayGridMonth,timeGridWeek prev,next",
+    },
+    views: {
+      timeGridWeek: {
+        dayHeaderFormat: { weekday: "short", day: "numeric" },
+      },
+    },
+    googleCalendarApiKey: "AIzaSyDiUdL_LGYASH-62xnIEIa769cpAUvUG8Q",
+    eventSources: [
+      {
+        googleCalendarId:
+          "3pr8qj9r009nesua5qi1hen3qs@group.calendar.google.com",
+        className: "music-event",
+      },
+      {
+        googleCalendarId:
+          "kd7e653qk52f35jcgl4n3dfmt0@group.calendar.google.com",
+        className: "drama-event",
+      },
+      {
+        googleCalendarId:
+          "aqlf3986tucmsde93bbes640fo@group.calendar.google.com",
+        className: "dance-event",
+      },
+      {
+        googleCalendarId:
+          "bt2376v0r8ogbj2ckmkol38kds@group.calendar.google.com",
+        className: "visual-arts-event",
+      },
+    ],
+  }).render();
+
+  let checkboxes = document.querySelectorAll(".filter-item > input[type='checkbox']");
+  document.querySelector(".filter-toggle#all").addEventListener("click", () => {
+    checkboxes.forEach((checkbox) => (checkbox.checked = true));
+    updateCalendar();
+  });
+  document.querySelector(".filter-toggle#none").addEventListener("click", () => {
+    checkboxes.forEach((checkbox) => (checkbox.checked = false));
+    updateCalendar();
+  });
+  document.getElementById("filter-form").addEventListener("change", updateCalendar);
+
+  function updateCalendar() {
+    checkboxes.forEach((checkbox) => {
+      let discipline = checkbox.parentNode.querySelector('label').innerText.toLowerCase().replace(" ", "-");
+      document.querySelectorAll(`.${discipline}-event`).forEach(event => event.style.display = checkbox.checked ? "" : "none");
+    });
+  }
+</script>

@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="content">
+<div class="list-group__list standalone">
+	{% assign event = page %}
+	{%- include event-node.html content=page.content -%}
+</div>
+
+<div class="grid-group__list">
+	{%- if page.video -%}
+		{%- for video_url in page.video -%}
+			{%- assign yt_embed = video_url | replace: "watch?v=", "embed/" -%}
+			<iframe class="framed mw-100" width="560" height="315" src="{{- yt_embed -}}" title="{{- page.title }} on YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		{%- endfor -%}
+	{%- endif -%}
+</div>
+
+{%- assign basename = page.path | split: "/" | shift | split: "." | first | uri_escape | replace: '[%22','' -%}
+{%- assign gallery_media = site.static_files | where_exp: "img", "img.path contains basename and img.gallery_ignore != true" -%}
+
+{%- if gallery_media.size > 0 -%}
+	<h2>Gallery</h2>
+	<!-- <p>Have a photo from this event that you'd love to see featured? Send it over to us via this form!</p> -->
+	{% include gallery.html %}
+{%- endif -%}
+</div>
+<!-- todo: show all media, show less media toggle -->

@@ -1,0 +1,22 @@
+<div class="event">
+	<div class="event__img img-wrapper">
+		<span class="event__tag">{{ event.tags | first | default: "Central Arts" }}</span>
+        <img src="{{ event.image }}" alt="" class="framed" loading="lazy">
+	</div>
+	<div class="event__info">
+		{% if include.show_date %}
+			<span class="event__date">{{ event.date | date_to_string }}</span>
+		{%- endif %}
+		{% if include.url -%}
+			{%- assign h = "h3" -%}
+		{%- else -%}
+			{%- assign h = "h1" -%}
+		{%- endif %}
+		<{{- h }} class="event__title">{{ event.title }}</{{- h -}}>
+		<hr>
+		<div class="event__description">{{ include.content }}</div>
+		{% if include.button -%}
+			<a href="{{ event.url | relative_url }}" class="button-large">Explore</a>
+		{%- endif %}
+	</div>
+</div>

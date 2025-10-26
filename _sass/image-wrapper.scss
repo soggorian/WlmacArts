@@ -1,0 +1,44 @@
+@mixin img-dimensions($h, $mx-w, $mn-h: initial, $mn-w: initial) {
+  min-width: $mn-w;
+  max-width: $mx-w;
+
+  img {
+    height: $h;
+    min-height: $mn-h;
+  }
+}
+
+// todo: generalize and remove
+.list-group__list {
+
+.img-wrapper {
+  $height: 300px;
+  $width: 300px;
+
+  float: left;
+  margin-right: 2.5rem;
+  margin-bottom: 1rem;
+
+  @include img-dimensions($height, $width);
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @at-root .standalone & {
+    @include img-dimensions(auto, 400px, 100px, 300px);
+  }
+
+  @include mq($on-laptop) {
+    @include img-dimensions($height, 225px);
+  }
+  @include mq($on-tablet) {
+    float: none;
+    margin: auto;
+    @include img-dimensions(200px, $width);
+  }
+}
+
+// todo: generalize and remove
+}

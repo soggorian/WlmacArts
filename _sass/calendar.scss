@@ -1,0 +1,51 @@
+.calendar-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  @include mq($on-tablet) {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+}
+
+section.filter {
+  padding: 1rem 2rem;
+  font-size: 1.25em;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--fc-button-bg-color,#2C3E50);
+
+  h2 {
+    display: inline-block;
+  }
+
+  .filter-toggles {
+    display: inline-flex;
+
+    .filter-toggle {
+      // padding: 0 0.5rem;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        border-right: 1px solid $charcoal;
+        padding-right: 0.5rem;
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .filter-list {
+    list-style: none;
+
+    .filter-item > * {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}

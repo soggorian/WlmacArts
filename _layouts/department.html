@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="department">
+  {{ content }}
+  <div class="content">
+    <div class="title">
+      {%- if page.heading -%}
+      <h1>{{ page.heading }}</h1>
+      {%- else -%}
+      <h1>{{ page.title }}</h1>
+      {%- endif -%}
+      <h2>{{ page.subheading }}</h2>
+    </div>
+
+    {%- assign dept = site.data.departments[page.tag] -%}
+
+    <br />
+    <div id="contact">
+      <h2 class="h1">Contact</h2>
+      <div class="contact__list">
+        {%- for contact in dept.contact -%}
+        <div>
+          <h3 class="h2">{{ contact.name }}</h3>
+          <p>
+            <i data-feather="mail"></i>
+            <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+          </p>
+          <p><i data-feather="map-pin"></i>Room {{ contact.room }}</p>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script>
+    window.onload = () => {
+      feather.replace();
+    };
+  </script>
+</div>
