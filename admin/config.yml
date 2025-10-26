@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 media_folder: '/assets/img'
-site_url: 'https://wlmacarts.netlify.app'
-logo_url: 'https://wlmacarts.netlify.app/assets/img/logo.svg'
+site_url: 'https://macarts.netlify.app'
+logo_url: 'https://macarts.netlify.app/assets/img/logo.svg'
 collections:
   - name: 'announcements'
     label: 'Announcements'
