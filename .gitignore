@@ -3,6 +3,7 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+-_posts/2025-10-25-Post-Template.md
 
 # Local Netlify folder
 .netlify
