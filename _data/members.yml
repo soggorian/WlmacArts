@@ -1,25 +1,4 @@
 councils:
-  - name: Central Arts
-    id: central
-    btn: Central
-    description: Central Arts Council acts like the glue between the four subject councils&colon; Music, Drama, Dance and Visual Arts. We help consolidate the different   events that each council does by confirming dates, handling advertising aspects and backstage components. We also have meetings with the chairs of the subject councils to flesh out upcoming initiatives, brainstorm new events and reflect upon past events. Central Arts Council brings Mackenzie Arts in Bloom, the yearly application forms and the Virtual Awards Ceremony.
-    chairs:
-    - name: Zoe Friedman
-      position: Senior Chair
-      headshot:
-      description: insert very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long bio here
-    - name: Kailey Cheng
-      position: Junior Chair
-      headshot:
-      description: insert ideal length ideal length ideal length ideal length ideal length ideal length ideal length ideal length ideal length ideal length ideal length ideal length ideal length ideal length bio here
-    - name: Taihan Mobasshir
-      position: Junior Chair
-      headshot:
-      description: insert bio here
-    members:
-    - Member Name 1
-    - Member Name 2
-    - Member Name 3
   - name: Music
     id: music
     btn: Music

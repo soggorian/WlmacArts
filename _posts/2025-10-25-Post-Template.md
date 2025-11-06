@@ -1,6 +1,7 @@
 ---
 title: Title Post
 author: Post Author
+published: false #remove this on visible posts!
 tags: [dance, music]
 ---
 

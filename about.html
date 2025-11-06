@@ -13,48 +13,7 @@ default_avatar: "/members/default.png"
       <div class="title" id="{{ council.id }}-btn" type="button" onclick="{{ council.id }}()"><p>{{council.btn}}</p></div>
     {%- endfor -%}			    
 	</div>
-	{%- for council in site.data.members.councils -%}
-	<div class="council_info_box" id="{{ council.id }}"> {% comment %} council id for javascript-ing the tabs {% endcomment %}
-		<h2 class="section-title">{{ council.name }}</h2>
-		<p class="councils__description">{{council.description}}</p>
 
-		<div class="council-chairs">
-  		{%- for chair in council.chairs -%}
-  			<div class="council-chair-box">    
-          <div class="council-chair-info-container">
-            {%- capture headshot -%}
-              {{ chair.headshot | default: page.default_avatar }}
-            {%- endcapture -%}
-{% comment %} chair bios and pictures temporarily hidden
-            <img src="{{ "/assets/img" | append: headshot | relative_url }}" alt="{{ chair.name }}" class="framed">
-            <div class="council-chair-info">
-      				<p class="council-chair__name">{{chair.name}}</p>
-      				<p class="council-chair__position">{{chair.position}}</p>
-            </div>
-          </div>
-  				<p class="council-chair__description">{{chair.description}}</p> 
-{% endcomment %}
-{% comment %} chair bios and pictures temporarily hidden [start] {% endcomment %}
-            <img src="{{ "/assets/img" | append: headshot | relative_url }}" alt="{{ chair.name }}" class="framed" style="display:none">
-            <div class="council-chair-info" style="margin-left:0"> 
-      				<p class="council-chair__position">{{chair.position}}</p>              
-      				<p class="council-chair__name" style="margin-top: 0.1em; margin-bottom: 0.5em;">{{chair.name}}</p>
-            </div>
-          </div>
-  				<p class="council-chair__description" style="display:none">{{chair.description}}</p>
-{% comment %} chair bios and pictures temporarily hidden [end] {% endcomment %}
-  			</div>
-  		{%- endfor -%}			
-    </div>
-    <h3 class="council-members-title">Members:</h3>
-    <div class="council-member-row">
-      {%- for member in council.members -%}
-        <p class="member-name">{{member}}</p>
-      {%- endfor -%}
-    </div>
-  </div>
-	{%- endfor -%}
-</div>
 <script>
   {%- for council in site.data.members.councils -%}
     function {{council.id}}() {
@@ -69,7 +28,18 @@ default_avatar: "/members/default.png"
       {%- endfor -%}			
     }
   {%- endfor -%}	
-  window.document.onload = central();
+  window.document.onload = music();
 </script>
 
 {% comment %} TODO: add fixed size for info box?, tab button hover?, make it work on mobile [button order?] (excuse my spaghetti code) {% endcomment %}
+
+<style>
+.council_tab_buttons .title {
+  background-color: #D9D9D9;
+}
+
+.council_tab_buttons .title:hover {
+  background-color: #EDEDED;
+  transition: 0.5s smooth;
+}
+</style>
