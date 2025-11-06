@@ -18,12 +18,8 @@ collections:
       - {
           label: 'Author',
           name: 'author',
-          widget: 'relation',
-          collection: 'config',
-          file: 'members',
-          search_fields: ['members.*.name'],
-          value_field: 'members.*.name',
-          min: 1
+          widget: 'string',
+   
         }
       - {
           label: 'Tags',
