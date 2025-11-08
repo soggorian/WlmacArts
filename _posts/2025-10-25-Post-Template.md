@@ -1,11 +1,30 @@
 ---
-title: Title Post
-author: Post Author
-published: false #remove this on visible posts!
-tags: [dance, music]
+title: Remembrance Day Assembly
+author: Dominic Lam
+published: false
+tags:
+  - music
 ---
+O﻿n November 11, 2025, the Mackenzie Arts department will be performing in the Remembrance Day Assemblies. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et urna tellus. Morbi aliquam non nisl sit amet eleifend. Sed in ex in sapien consectetur egestas ac sit amet lacus. Maecenas porta mollis nunc non faucibus. In hac habitasse platea dictumst. In in blandit orci. Praesent elementum sapien eget dolor pretium eleifend. Nulla vel mollis libero. Morbi at dapibus sapien. Quisque dui ipsum, euismod vel dolor vitae, vulputate gravida magna.
+W﻿ind Symphony/String Ensemble:
+
+* C﻿all time is 07:15: A percussion should head to the cafeteria, chairs and stands should be set up.
+* 07:﻿30-08:00 - Wind Symphony rehearsal
+* 08:00-08:30 - Joint rehearsal with WS and Strings (call time for strings)
+* 08﻿:30-08:50 - Strings rehearsal
+
+R﻿epertoire:
+
+* T﻿he Meeting Place (WS)
+* O﻿ Canada (WS/STR)
+* C﻿ompassion (STR)
+
+D﻿ress: 
+
+* W﻿ind Symphony: Concert Dress (tuxedo for men and black dresses for women)
+* S﻿tring Ensemble: Concert Black (all black)
 
 
-![Subtitle for Image](https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp)
+
+![Subtitle for Image]()
