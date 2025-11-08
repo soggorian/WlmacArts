@@ -1,5 +1,5 @@
 ---
-title: Remembrance Day Assembly
+title: Title
 author: Dominic Lam
 published: false
 tags:
