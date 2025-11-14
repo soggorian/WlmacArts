@@ -122,3 +122,23 @@
     max-width: 100%;
   }
 }
+
+.post {
+  ul,
+  ol {
+    margin-left: 1.5rem;   /* indent list */
+    padding-left: 1.5rem;  /* ensures bullets show */
+  }
+
+  ul li {
+    list-style-type: disc; /* normal filled bullets */
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+
+  li {
+    margin-bottom: 0.5rem; /* spacing between items */
+  }
+}
