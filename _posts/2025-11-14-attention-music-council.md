@@ -1,6 +1,8 @@
 ---
 title: Attention Music Council!
 author: Dominic Lam
+tags:
+  - music
 ---
 **Attention Music Council!**\
 We have two upcoming meetings:\
