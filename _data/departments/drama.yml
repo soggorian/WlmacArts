@@ -1,17 +1,16 @@
 heading: Drama
 name: Drama
 gallery:
-  description: >-
-    Drama council is a team of Mackenzie students with a passion for performance
-    and a flair for the dramatic. Drama council handles all drama related events
-    at Mackenzie, and lets anyone get involved in productions— even if they
-    don’t want to be on stage! This year, drama council produced Mackenzie’s
-    first ever virtual play: Much Ado About Zoom Class, a student written and
-    run production that premiered on youtube to over 1000 viewers! Drama council
-    handled everything behind the scenes, working on editing, props, costumes,
-    graphics, and more! If you love theatre and want to be a part of future
-    productions in any capacity, drama council is the place for you. Come and
-    join us to put on plays and find your theatre family!
+  description: "Drama council is a team of Mackenzie students with a passion for
+    performance and a flair for the dramatic. Drama council handles all drama
+    related events at Mackenzie, and lets anyone get involved in productions—
+    even if they don’t want to be on stage! This year, drama council produced
+    Mackenzie’s first ever virtual play: Much Ado About Zoom Class, a student
+    written and run production that premiered on youtube to over 1000 viewers!
+    Drama council handled everything behind the scenes, working on editing,
+    props, costumes, graphics, and more! If you love theatre and want to be a
+    part of future productions in any capacity, drama council is the place for
+    you. Come and join us to put on plays and find your theatre family!"
   alt-text: Drama Council
   image: /assets/img/drama/IMG_6411.JPG
 classwork:
@@ -20,9 +19,6 @@ classwork:
   image: /music/m4.png
   alt-text: drama
 contact:
-  - name: Colin Fallowfield
-    email: colin.fallowfield@tdsb.on.ca
-    room: "144"
   - name: Jennifer Scott-Barnier
     email: jennifer.scottbarnier@tdsb.on.ca
     room: 114
