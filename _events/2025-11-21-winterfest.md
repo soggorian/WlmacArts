@@ -1,10 +1,6 @@
 ---
 title: WinterFest
 tags:
-  - dance
-  - music
-  - visual-arts
-  - drama
   - central-arts
 image: /assets/img/logo.svg
 ---
