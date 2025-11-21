@@ -11,7 +11,8 @@ gallery:
     questions, concerns, comments, cat pictures or just to chat!
 
     Instagram: wlmac.visualartscouncil
-  image: /assets/img/visual-arts/Cristelle Valdevieso, Pink Mushrooms, Monochromatic Painting.jpeg
+  image: /assets/img/visual-arts/Cristelle Valdevieso, Pink Mushrooms,
+    Monochromatic Painting.jpeg
   alt-text: Visual and Digital Arts Council
 classwork:
   show: false
@@ -21,7 +22,13 @@ classwork:
 contact:
   - name: Lisa Cohen
     email: lisa.abrams@tdsb.on.ca
-    room: 114 or 217
-  - name: Alexandra Peters
-    email: alexandra.peters@tdsb.on.ca
-    room: "216"
+    room: 114, 217, Art Office
+  - name: Jennifer Scott Barnier
+    email: jennifer.scottbarnier@tdsb.on.ca
+    room: "114"
+  - name: Ian Lawrence
+    email: ian.lawrence@tdsb.on.ca
+    room: 216, Art Office
+  - name: Jan Noestheden
+    email: jan.noestheden@tdsb.on.ca
+    room: 216, Art Office
