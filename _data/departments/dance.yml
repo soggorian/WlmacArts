@@ -24,9 +24,6 @@ classwork:
   image: /music/m4.png
   alt-text: dance
 contact:
-  - name: Alexandra Peters
-    email: alexandra.peters@tdsb.on.ca
+  - name: Alexandra Parravano
+    email: alexandra.parravano@tdsb.on.ca
     room: "216"
-  - name: Colin Fallowfield
-    email: colin.fallowfield@tdsb.on.ca
-    room: "144"
