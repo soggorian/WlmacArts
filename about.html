@@ -8,38 +8,67 @@ default_avatar: "/members/default.png"
 <div class="year-switcher">
 </div>
 <div class="councils">
-	<div class="council_tab_buttons">
-    {%- for council in site.data.members.councils -%}
-      <div class="title" id="{{ council.id }}-btn" type="button" onclick="{{ council.id }}()"><p>{{council.btn}}</p></div>
-    {%- endfor -%}			    
-	</div>
+<style>
+  .nav-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .nav-box div {
+    padding: 10px 15px;
+    background: #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .nav-box .active {
+    background: #3B3B54;
+    color: white;
+  }
+
+  .section {
+    display: none;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .section.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-box">
+  <div onclick="showSection(0)" class="active">Visual Arts</div>
+  <div onclick="showSection(1)">Music</div>
+  <div onclick="showSection(2)">Drama</div>
+  <div onclick="showSection(3)">Dance</div>
+</div>
+
+<div id="sections">
+  <a href="https://adobe.ly/4i9Rvz6" target="_blank">
+  View Lightroom Album
+</a>
+
+  <div class="section"></div>
+  <div class="section"></div>
+  <div class="section"></div>
+</div>
 
 <script>
-  {%- for council in site.data.members.councils -%}
-    function {{council.id}}() {
-      {%- for councilin in site.data.members.councils -%}
-        {%- if councilin == council -%}
-          document.getElementById("{{councilin.id}}").style.display = "block";
-          document.getElementById("{{councilin.id}}-btn").style.backgroundColor = "#EDEDED";      
-        {%- else -%}
-          document.getElementById("{{councilin.id}}").style.display = "none";    
-          document.getElementById("{{councilin.id}}-btn").style.backgroundColor = "#D9D9D9";      
-        {%- endif -%}
-      {%- endfor -%}			
-    }
-  {%- endfor -%}	
-  window.document.onload = music();
+  function showSection(i) {
+    let tabs = document.querySelectorAll(".nav-box div");
+    let sections = document.querySelectorAll(".section");
+
+    tabs.forEach(t => t.classList.remove("active"));
+    sections.forEach(s => s.classList.remove("active"));
+
+    tabs[i].classList.add("active");
+    sections[i].classList.add("active");
+  }
 </script>
-
-{% comment %} TODO: add fixed size for info box?, tab button hover?, make it work on mobile [button order?] (excuse my spaghetti code) {% endcomment %}
-
-<style>
-.council_tab_buttons .title {
-  background-color: #D9D9D9;
-}
-
-.council_tab_buttons .title:hover {
-  background-color: #EDEDED;
-  transition: 0.5s smooth;
-}
-</style>
+</div>
