@@ -8,68 +8,123 @@ default_avatar: "/members/default.png"
 <div class="year-switcher">
 </div>
 <div class="councils">
-<style>
-  .nav-box {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
+  <style>
+    .nav-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
 
-  .nav-box div {
-    padding: 10px 15px;
-    background: #ddd;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-  }
+    .nav-box div {
+      padding: 10px 15px;
+      background: #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-  .nav-box .active {
-    background: #3B3B54;
-    color: white;
-  }
+    .nav-box .active {
+      background: #3B3B54;
+      color: white;
+    }
 
-  .section {
-    display: none;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
+    .section {
+      display: none;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
 
-  .section.active {
-    display: block;
-  }
-</style>
-</head>
-<body>
+    .section.active {
+      display: block;
+    }
+  </style>
+  </head>
 
-<div class="nav-box">
-  <div onclick="showSection(0)" class="active">Visual Arts</div>
-  <div onclick="showSection(1)">Music</div>
-  <div onclick="showSection(2)">Drama</div>
-  <div onclick="showSection(3)">Dance</div>
-</div>
-
-<div id="sections">
-  
-  <div class="section"><a href="https://adobe.ly/4i9Rvz6" target="_blank">
-  View Lightroom Album
-  </a></div>
-
-  <div class="section"></div>
-  <div class="section"></div>
-  <div class="section"></div>
-</div>
-
+  <body>
 <script>
-  function showSection(i) {
-    let tabs = document.querySelectorAll(".nav-box div");
-    let sections = document.querySelectorAll(".section");
-
-    tabs.forEach(t => t.classList.remove("active"));
-    sections.forEach(s => s.classList.remove("active"));
-
-    tabs[i].classList.add("active");
-    sections[i].classList.add("active");
-  }
+  document.addEventListener("DOMContentLoaded", function () {
+    showSection(0);
+  });
 </script>
+    <div class="nav-box">
+      <div onclick="showSection(0)" class="active">Visual Arts</div>
+      <div onclick="showSection(1)">Music</div>
+      <div onclick="showSection(2)">Drama</div>
+      <div onclick="showSection(3)">Dance</div>
+    </div>
+    
+
+    <div id="sections">
+
+      <!DOCTYPE html>
+      <html>
+
+      <head>
+        <style>
+          .lightroom-preview {
+            display: inline-block;
+            text-align: center;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+          }
+
+          .lightroom-preview img {
+            width: 300px;
+            /* adjust size */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+          }
+
+          .lightroom-preview img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+          }
+
+          .lightroom-preview a {
+            text-decoration: none;
+            color: #2f3f61;
+            font-weight: bold;
+            display: block;
+            margin-top: 8px;
+          }
+        </style>
+      </head>
+
+      <body>
+
+
+      </body>
+
+      </html>
+
+      <div class="section">
+
+        <div class="lightroom-preview">
+          <a href="https://lightroom.adobe.com/shares/067e6ef67b1644619909ee719ec8fde1" target="_blank">
+            <img src="./assets/img/visual-arts/example-lightroom.JPG" alt="Lightroom Album Preview">
+          </a>
+          <a href="https://lightroom.adobe.com/shares/067e6ef67b1644619909ee719ec8fde1" target="_blank">View Lightroom
+            Album</a>
+        </div>
+      </div>
+      <div class="section"></div>
+      <div class="section"></div>
+    </div>
+
+    <script>
+      function showSection(i) {
+        let tabs = document.querySelectorAll(".nav-box div");
+        let sections = document.querySelectorAll(".section");
+
+        tabs.forEach(t => t.classList.remove("active"));
+        sections.forEach(s => s.classList.remove("active"));
+
+        tabs[i].classList.add("active");
+        sections[i].classList.add("active");
+      }
+    </script>
 </div>
